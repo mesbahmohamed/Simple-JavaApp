@@ -1,25 +1,50 @@
-node{
-    git branch:'main',url:'https://github.com/mesbahmohamed/Simple-JavaApp.git'
-    stage('build'){
-        try{
-            sh('echo "Hello Mohamed This is Build Stage"')
-        }
-        catch(Exception e){
-            sh('echo "Exception Found " ')
-            throw e 
-        }
+pipeline{
+    agent any
 
-        
+    stages{
+        stage("Build"){
+            steps{
+                echo "========executing Buildine========"
+            }
+            post{
+                always{
+                    echo "========always========"
+                }
+                success{
+                    echo "========A executed successfully========"
+                }
+                failure{
+                    echo "========A execution failed========"
+                }
+            }
+        }
+        stage("Test"){
+            steps{
+                
+                echo "========executing Testing========"
+            }
+            post{
+                always{
+                    echo "========always========"
+                }
+                success{
+                    echo "========A executed successfully========"
+                }
+                failure{
+                    echo "========A execution failed========"
+                }
+            }
+        }
     }
-    stage('test')
-    {
-        if(env.BRANCH_NAME=="feat"){
-            sh('echo "Test Stage"')
+    post{
+        always{
+            echo "========always========"
         }
-        else{
-            sh('echo "Test"')
+        success{
+            echo "========pipeline executed successfully ========"
         }
-        
-        
+        failure{
+            echo "========pipeline execution failed========"
+        }
     }
 }
