@@ -2,7 +2,7 @@ node{
     git branch:'main',url:'https://github.com/mesbahmohamed/Simple-JavaApp.git'
     stage('build'){
         try{
-            sh('echo "Hello Mohamed This is Build Stage')
+            sh('echo "Hello Mohamed This is Build Stage"')
         }
         catch(Exception e){
             sh('echo "Exception Found " ')
@@ -17,7 +17,7 @@ node{
             sh('echo "Test Stage"')
         }
         else{
-            sh('echo "Test Mesbah"')
+            sh('echo "Test')
         }
         
         
