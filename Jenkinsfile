@@ -17,7 +17,7 @@ node{
             sh('echo "Test Stage"')
         }
         else{
-            sh('echo "Test')
+            sh('echo "Test"')
         }
         
         
