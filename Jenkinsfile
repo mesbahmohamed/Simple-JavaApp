@@ -11,7 +11,7 @@ node{
 
         
     }
-    test('test')
+    stage('test')
     {
         if(env.BRANCH_NAME=="feat"){
             sh('echo "Test Stage"')
