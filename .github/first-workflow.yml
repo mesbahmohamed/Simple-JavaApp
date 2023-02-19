@@ -1,15 +1,13 @@
-name: First Workflow 
+name: ci workflow
 on:
-  push:
+  pull_request:
     branches:
-      -"main"
-
-
+      - "main"
 jobs:
-  first-pipline:
-    name: first job
+  ci-workflow:
+    name: ci workflow
     runs-on: ubuntu-latest
     steps:
-      - name: run bash command
-        run: echo "first workflow"
+      - name: build the app
+        run: echo " Hello Mohamed"
         shell: bash
